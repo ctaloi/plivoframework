@@ -206,28 +206,28 @@ clear
 
 # Install configs
 CONFIG_OVERWRITE=yes
-case $ACTION in
-    "UPDATE")
-        while [ 1 ]; do
-            clear
-	    echo "Do you want to overwrite the following config files"
-	    echo " - $REAL_PATH/etc/plivo/default.conf"
-	    echo " - $REAL_PATH/etc/plivo/cache/cache.conf"
-	    echo "yes/no ?"
-	    read INPUT
-	    if [ "$INPUT" = "yes" ]; then
-	        CONFIG_OVERWRITE=yes
-                break
-            elif [ "$INPUT" = "no" ]; then
-	        CONFIG_OVERWRITE=no
-                break
-            fi
-        done
-    ;;
-    "INSTALL")
-        CONFIG_OVERWRITE=yes
-    ;;
-esac
+# case $ACTION in
+#     "UPDATE")
+#         while [ 1 ]; do
+#             clear
+# 	    echo "Do you want to overwrite the following config files"
+# 	    echo " - $REAL_PATH/etc/plivo/default.conf"
+# 	    echo " - $REAL_PATH/etc/plivo/cache/cache.conf"
+# 	    echo "yes/no ?"
+# 	    read INPUT
+# 	    if [ "$INPUT" = "yes" ]; then
+# 	        CONFIG_OVERWRITE=yes
+#                 break
+#             elif [ "$INPUT" = "no" ]; then
+# 	        CONFIG_OVERWRITE=no
+#                 break
+#             fi
+#         done
+#     ;;
+#     "INSTALL")
+#         CONFIG_OVERWRITE=yes
+#     ;;
+# esac
 
 if [ "$CONFIG_OVERWRITE" = "yes" ]; then
     mkdir -p $REAL_PATH/etc/plivo &>/dev/null
