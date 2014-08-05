@@ -205,7 +205,7 @@ fi
 clear
 
 # Install configs
-CONFIG_OVERWRITE=no
+CONFIG_OVERWRITE=yes
 case $ACTION in
     "UPDATE")
         while [ 1 ]; do
